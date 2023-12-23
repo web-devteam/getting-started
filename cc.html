@@ -1,0 +1,37 @@
+<link rel="stylesheet" href="cc.css">
+<link rel="icon" href="LOGO.png">
+<body>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <a href="index.html"><p id="back">◀️</p></a>
+    <div id="box">
+<h1>Feedback</h1>
+<div id="box1">
+<input id="name" placeholder="name" type="text">
+
+<textarea name="mail" id="mail" cols="30" rows="10" placeholder="question or compliant"></textarea>
+</div>
+<div id="box2">
+<img id="doneimg" src="download (4).png" alt="">
+<p>thank you for your feedback</p>
+</div>
+<button id="send">send</button>
+</div>
+</body>
+
+<script>
+    let done = false
+    document.getElementById("send").addEventListener("click", ()=>{
+        if(done==false){
+         if(document.getElementById("name").value!="" && document.getElementById("mail").value!=""){location.href="mailto:web.dev.team321@gmail.com"+"?"+"subject=astro feedback"+"&"+"body="+"name : "+document.getElementById("name").value+". feed : "+document.getElementById("mail").value;
+         document.getElementById("box1").style.display="none"
+         document.getElementById("box2").style.display="flex"
+         document.getElementById("send").innerText="done"
+        done=true}
+         else if(document.getElementById("name").value=="" && document.getElementById("mail").value==""){window.alert("please fill in both fields")} 
+         else if(document.getElementById("name").value==""){window.alert("please fill in name")}
+         else{window.alert("please fill in compliant or question")}}
+         else{location.href="index.html"}
+    })
+
+</script>
